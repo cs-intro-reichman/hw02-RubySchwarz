@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class OneOfEachStats {
 
     public static void main(String[] args) {
@@ -7,6 +9,8 @@ public class OneOfEachStats {
         }
 
         int T = Integer.parseInt(args[0]);
+        int seed = Integer.parseInt(args[1]);
+        Random generator = new Random(seed);
         int totalChildren = 0;
         int count2 = 0, count3 = 0, count4OrMore = 0;
         int mostCommonCount = 0, mostCommonValue = 0;
@@ -17,7 +21,7 @@ public class OneOfEachStats {
             int childrenCount = 0;
 
             while (!hasBoy || !hasGirl) {
-                if (Math.random() < 0.5) {
+                if (generator.nextDouble() < 0.5) {
                     hasBoy = true;
                 } else {
                     hasGirl = true;
