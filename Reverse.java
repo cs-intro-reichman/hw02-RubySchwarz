@@ -13,9 +13,14 @@ public class Reverse {
 
             System.out.println(reversed);
 
+            // Check if the length of the input string is odd
             if (input.length() % 2 != 0) {
+            
+                // If odd, print the middle character    
                 System.out.println("The middle character is " + input.charAt(input.length() / 2));
             } else {
+
+                // If even, print the character before the exact middle
                 System.out.println("The middle character is " + input.charAt((input.length() / 2) - 1));
             }
         }
